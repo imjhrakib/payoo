@@ -14,7 +14,28 @@
 
 </head>
 
-<body>
+<body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
+  <div class="w-[300px] h-[130px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+    <img src="./assets/Group.png" alt="">
+  </div>
+
+  <form class="bg-white p-8 rounded-3xl w-[350px]">
+    <div>
+      <label class="font-semibold">Mobile Number</label>
+      <br>
+      <input type="text" placeholder="Enter your number" class="input bg-[#f4f5f7] mt-3 rounded-3xl"
+        id="mobileNumber" />
+    </div>
+    <div class="mt-5">
+      <label class="font-semibold">4 Digit Pin</label>
+      <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#f4f5f7] mt-3 rounded-3xl" id="pinNumber" />
+    </div>
+    <button type="button" class="btn bg-[#0874F2] text-white w-full mt-5 rounded-3xl" id="loginBtn">Login</button>
+
+  </form>
+
+  <!-- js scripts -->
+  <script src="script.js"></script>
 
 </body>
 
