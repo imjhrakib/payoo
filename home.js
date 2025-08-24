@@ -1,12 +1,28 @@
+// function to get input values number
+function getInputValuesNumber(id){
+  return parseInt(document.getElementById(id).value) || 0
+}
+
+// function to get input values number from innerText
+function getInputValuesNumberInnerText(id){
+  return parseInt(document.getElementById(id).innerText) || 0
+}
+
+// function to get input values
+function getInputValues(id){
+  return document.getElementById(id).value
+}
+
+
 // add money with dom
 const validPin = "1234"
 document.getElementById("addMoneyBtn").addEventListener("click",function(e){
   e.preventDefault()
-  const bank = document.getElementById("bank").value
-  const bankAccountNumber = document.getElementById("bankAccountNumber").value
-  const addAmount = parseInt(document.getElementById("addAmount").value) || 0
-  const pinNumber = document.getElementById("pinNumber").value
-  const availableBalance = parseInt(document.getElementById("availableBalance").innerText) || 0
+  const bank = getInputValues("bank")
+  const bankAccountNumber = getInputValues("bankAccountNumber")
+  const addAmount = getInputValuesNumber("addAmount")
+  const pinNumber = getInputValues("pinNumber")
+  const availableBalance = getInputValuesNumberInnerText("availableBalance")
 
   if(bankAccountNumber.length !== 11) {
     alert("Enter a valid account number")
@@ -26,9 +42,9 @@ document.getElementById("addMoneyBtn").addEventListener("click",function(e){
 // cash out with dom
 document.getElementById("withdrawBtn").addEventListener("click",function(e){
   e.preventDefault()
-  const agentNumber = document.getElementById("agentNumber").value
-  const cashOutAmount = document.getElementById("subCashOutAmount").value || 0
-  const pinNumber = document.getElementById("pinNumberCashOut").value
+  const agentNumber = getInputValues("agentNumber")
+  const cashOutAmount = getInputValuesNumber("subCashOutAmount")
+  const pinNumber = getInputValues("pinNumberCashOut")
 
   if(agentNumber.length !== 11){
     alert("Please Enter valid number")
@@ -39,7 +55,7 @@ document.getElementById("withdrawBtn").addEventListener("click",function(e){
     return
   }
 
-  const availableBalance = parseInt(document.getElementById("availableBalance").innerText) || 0
+  const availableBalance = getInputValuesNumberInnerText("availableBalance")
 
   const newBalance = availableBalance - cashOutAmount
 
