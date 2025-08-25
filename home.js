@@ -205,9 +205,14 @@ document.getElementById("transaction").addEventListener("click", function () {
       `
     transactionContainers.appendChild(div)
   }
-
-
 })
+
+// LogOut button
+document.getElementById("logOutBtn").addEventListener("click",function(){
+  window.location.href = "./index.html"
+})
+
+
 // toggling features
 document.getElementById("addMoney").addEventListener("click", function () {
   handleToggle("addMoneyForm")
